@@ -1,25 +1,29 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import './App.css';
+import Text from './components/Text'
+
+
 
 class App extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      desktop: true
+    }
+    // this.themeClickHandler() = this.themeClickHandler.bind(this)
+  }
+  // themeClickHandler = () => {
+  //   this.setState({
+  //     desktop: !this.state.desktop
+  //   })
+  // }
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div className={"App "  + this.state.desktop ? "uqdc-pc" : "uqdc-mb"} >
+
+        <h1>Uniqlo Style Guide</h1>
+        <Text />
       </div>
     );
   }

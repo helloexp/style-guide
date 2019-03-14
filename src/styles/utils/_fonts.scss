@@ -1,0 +1,25 @@
+@font-face {
+	font-family: "UniqloProBold";
+	src: url("../assets/fonts/UniqloProBold.ttf");
+}
+
+@font-face {
+	font-family: "UniqloProRegular";
+	src: url("../assets/fonts/UniqloProRegular.ttf");
+}
+
+@mixin main($size, $lh) {
+    font-family: "UniqloProBold", 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    font-size: $size;
+    line-height: $lh;
+}
+
+@mixin body($size, $lh) {
+    font-family: "UniqloProRegular", 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    font-size: $size;
+    line-height: $lh;
+}
