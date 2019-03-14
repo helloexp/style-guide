@@ -1,7 +1,7 @@
 # Uniqlo Style Guide
 
 
-##Run App to make/see changes
+## Run App to make/see changes
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
