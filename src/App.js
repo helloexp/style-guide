@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Header from './components/Nav/Header';
 import SideNav from './components/Nav/SideNav';
 import HeaderStyles from './components/Text'
-import {Row, Col, Container} from 'reactstrap'
+import {Row, Col, Container, Jumbotron} from 'reactstrap'
 
 import './styles/desktop/desktop.scss';
 import './styles/mobile/mobile.scss';
@@ -25,9 +25,11 @@ class App extends Component {
     return (
       <div className={"App "  + this.state.desktop ? "uqdc-pc" : "uqdc-mb"} >
         <Header />
+        Jumbotron
+        <h1>Style Guide</h1>
 
         <Container>
-          <h1>Style Guide</h1>
+
 
           <Row style={{marginTop: "50px"}}>
             <Col sm={9}>
