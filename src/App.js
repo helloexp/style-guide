@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import Text from './components/Text'
+import Header from './components/Header'
 import './styles/desktop/desktop.scss';
 import './styles/mobile/mobile.scss';
-
-
 
 class App extends Component {
   constructor(props){
@@ -22,8 +20,7 @@ class App extends Component {
   render() {
     return (
       <div className={"App "  + this.state.desktop ? "uqdc-pc" : "uqdc-mb"} >
-        <h1>Uniqlo Style Guide</h1>
-        <Text />
+        <Header />
       </div>
     );
   }
