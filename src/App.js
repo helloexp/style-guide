@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import Text from './components/Text'
+import './styles/desktop/desktop.scss';
+import './styles/mobile/mobile.scss';
 
 
 
@@ -21,7 +22,6 @@ class App extends Component {
   render() {
     return (
       <div className={"App "  + this.state.desktop ? "uqdc-pc" : "uqdc-mb"} >
-
         <h1>Uniqlo Style Guide</h1>
         <Text />
       </div>

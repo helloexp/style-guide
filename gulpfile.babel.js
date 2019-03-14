@@ -2,13 +2,11 @@
 
 var gulp = require('gulp');
 var sass = require('gulp-sass');
-var cssnano = require('gulp-cssnano');
+// var cssnano = require('gulp-cssnano');
 var sourcemaps = require('gulp-sourcemaps');
 var autoprefixer = require('gulp-autoprefixer');
-var uglify = require('gulp-uglify');
-var concat = require('gulp-concat');
-// var rename = require('gulp-rename');
-var connect = require('gulp-connect');
+var babel = require('gulp-babel');
+ 
 
 
 sass.compiler = require('node-sass');
@@ -26,7 +24,7 @@ var autoprefixerOptions = {
 
 
 export function styleDesktop() {
-  return gulp.src('./src/styles/desktop.scss')
+  return gulp.src('./src/styles/desktop/desktop.scss')
     .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer({
       browsers: ['last 2 versions'],
@@ -38,7 +36,20 @@ export function styleDesktop() {
 }
 
 export function styleMobile() {
-  return gulp.src('./src/styles/mobile.scss')
+  return gulp.src('./src/styles/mobile/mobile.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(autoprefixer({
+      browsers: ['last 2 versions'],
+      cascade: false
+    }))
+    // .pipe(cssnano())
+    .pipe(gulp.dest('./dist/styles/'))
+
+}
+
+
+export function styleGlobal() {
+  return gulp.src('./src/styles/global/main.scss')
     .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer({
       browsers: ['last 2 versions'],
@@ -52,8 +63,8 @@ export function styleMobile() {
 
 
 export function watch() {
-  gulp.watch(paths.desktop, styleDesktop);
-  gulp.watch(paths.mobile, styleMobile);
-
+  gulp.watch('./src/styles/**/*.scss', styleDesktop);
+  gulp.watch('./src/styles/**/*.scss', styleMobile);
+  gulp.watch('./src/styles/**/*.scss', styleGlobal);
 }
 exports.default = watch;
