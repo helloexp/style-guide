@@ -1,6 +1,7 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-
+// Templates
+import Error from '../components/PageTemplates/Error'
 import PageTemplate from '../components/PageTemplates/PageTemplate';
 import ContentTemplate from '../components/PageTemplates/ContentTemplate'
 
@@ -30,7 +31,13 @@ const Routes = () => (
                         <Text {...props}/>
                     </ContentTemplate>
                 </PageTemplate>
-               
+            )}
+        />
+        <Route
+            render={props => (
+                <PageTemplate>
+                    <Error {...props}  />
+                </PageTemplate>
             )}
         />
     </Switch>

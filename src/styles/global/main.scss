@@ -1,3 +1,6 @@
+// Colors
+@import 'colors/colors';
+
 // Font Styling
 @import 'text/_default-text';
 
@@ -6,5 +9,11 @@
 
 // Breakpoints
 @import 'utils/_breakpoints';
+
+// Grid
+@import 'utils/grid';
+
+// Custom Styling
+@import 'custom/custom';
 
 

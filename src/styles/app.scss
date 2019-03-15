@@ -1,5 +1,6 @@
 
 @import 'global/utils/_fonts';
+@import 'global/utils/breakpoints';
 
 //Fonts
 @font-face {
@@ -12,8 +13,30 @@
 	font-family: "UniqloProRegular";
 	src: url("../assets/fonts/UniqloProRegular.ttf");
 }
-
+html, body {
+    height: 100%;
+}
+body {
+    margin: 0;
+}
 .display-container{
 	background-color: #f6f6f6;
 	padding: 15px;
+}
+
+.card{
+	height: 200px;
+	border-radius: 6px;
+	&:hover{
+		box-shadow: 1px 1px 15px rgba(0,0,0,.3)
+	}
+	a{
+		width: 100%;
+		height: 100%;
+	}
+	margin: 15px 0;;
+
+	@include bp(sm){
+		margin: 0;
+	}
 }

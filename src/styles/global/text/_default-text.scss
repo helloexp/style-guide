@@ -16,7 +16,13 @@ a{
 }
 a,
 li {
+    color: #000;
     text-decoration: none;
+}
+a:hover{
+    color: #ff0000;
+    text-decoration: none;
+
 }
 
 
