@@ -1,5 +1,7 @@
 # Uniqlo Style Guide
 
+## Download Stylesheets
+### Go to dist/styles
 
 ## Getting Started
 ### `npm install`
