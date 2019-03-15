@@ -1,5 +1,6 @@
 {
   "name": "uniqlo-style-guide",
+  "homepage": "http://uqdc.github.io/siteguide",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

@@ -24,7 +24,6 @@ const configureStore = () => {
     compose(applyMiddleware(...middleware)),
   );
 
-
   return {  store };
 };
 

@@ -19,11 +19,10 @@ const {  store } = configureStore();
 const rootElement = document.getElementById('root');
 
 const Root = () => (
-
     <Provider store={store}>
-            <Router>
-                <Routes />  
-            </Router>
+        <Router>
+            <Routes />  
+        </Router>
     </Provider>
 
 );
