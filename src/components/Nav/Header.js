@@ -9,6 +9,7 @@ import {
   NavLink,
 
   Input} from 'reactstrap';
+  
 
 export default class Header extends Component {
   constructor(props) {
@@ -26,20 +27,25 @@ export default class Header extends Component {
   }
   render() {
     return (
-      <div style={{marginBottom:"50px"}}>
+      <div >
         <Navbar color="light" light expand="md">
           <NavbarBrand href="/">Uniqlo Style Guide</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
           <Nav className="ml-auto" navbar>
           <NavItem>
-            <NavLink>
+            <NavLink href="/components">
               Components
             </NavLink>
           </NavItem>
           <NavItem>
-            <NavLink>
+            <NavLink href="/style">
               Style
+            </NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink href="/colors">
+              Colors
             </NavLink>
           </NavItem>
           <Input style={{ width: "250px"}} placeholder="Search"/>

@@ -1,3 +1,6 @@
+
+// Grid
+
 .flex{
     display: flex;
     flex-wrap: wrap;
@@ -9,3 +12,10 @@
     justify-content: center;
 }
 
+.float-left{
+    float: left;
+}
+
+.float-right{
+    float: right;
+}
