@@ -2,10 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import * as serviceWorker from './serviceWorker';
 
-// import { Provider } from 'react-redux';
+import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
-// import { PersistGate } from 'redux-persist/es/integration/react';
-// import configureStore from './store/index';
+import { PersistGate } from 'redux-persist/es/integration/react';
+import configureStore from './store/index';
 import Routes from './routes/index';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -13,18 +13,18 @@ import './styles/app.scss';
 import './styles/global/main.scss';
 
 
-// const { persistor, store } = configureStore();
+const {  store } = configureStore();
 // persistor.purge(); // Debug to clear persist
 
 const rootElement = document.getElementById('root');
 
 const Root = () => (
 
-    <div>
-        <Router>
-            <Routes />  
-        </Router>
-    </div>
+    <Provider store={store}>
+            <Router>
+                <Routes />  
+            </Router>
+    </Provider>
 
 );
 

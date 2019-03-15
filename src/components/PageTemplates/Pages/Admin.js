@@ -1,5 +1,5 @@
 import React from 'react';
-import {Jumbotron} from 'reactstrap';
+import {Jumbotron, Form, Input} from 'reactstrap';
 import ContentTemplate from '../ContentTemplate';
 
 
@@ -9,6 +9,7 @@ const Components = (props) => {
             <Jumbotron>
                 <h1>Admin Dashboard</h1>
             </Jumbotron>
+            
             
         </div>
     )

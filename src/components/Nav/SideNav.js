@@ -15,7 +15,6 @@ export default class SideNav extends Component {
           <NavItem>
             <NavLink href="#">Another Link</NavLink>
           </NavItem>
-        
         </Nav>
         <hr />
         <p>Link based</p>
