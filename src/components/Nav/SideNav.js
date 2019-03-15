@@ -4,8 +4,7 @@ import { Nav, NavItem, NavLink } from 'reactstrap';
 export default class SideNav extends Component {
   render() {
     return (
-      <div>
-        <p>List Based</p>
+      <div className="sidebar-nav">
         <Nav vertical>
           <NavItem>
             <NavLink href="#">Link</NavLink>
@@ -16,9 +15,7 @@ export default class SideNav extends Component {
           <NavItem>
             <NavLink href="#">Another Link</NavLink>
           </NavItem>
-          <NavItem>
-            <NavLink disabled href="#">Disabled Link</NavLink>
-          </NavItem>
+        
         </Nav>
         <hr />
         <p>Link based</p>
