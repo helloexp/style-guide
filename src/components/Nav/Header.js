@@ -32,7 +32,22 @@ export default class Header extends Component {
       <div style={{marginBottom:"50px"}}>
         <Navbar color="light" light expand="md">
           <NavbarBrand href="/">Uniqlo Style Guide</NavbarBrand>
-          <Input style={{marginLeft: "auto", width: "40%"}}/>
+          <NavbarToggler onClick={this.toggle} />
+          <Collapse isOpen={this.state.isOpen} navbar>
+          <Nav className="ml-auto" navbar>
+          <NavItem>
+            <NavLink>
+              Components
+            </NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink>
+              Style
+            </NavLink>
+          </NavItem>
+          <Input style={{ width: "250px"}} placeholder="Search"/>
+          </Nav>
+          </Collapse>
         </Navbar>
       </div>
     );
