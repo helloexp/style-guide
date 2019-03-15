@@ -1,21 +1,19 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {Row, Col} from 'reactstrap';
-import SideNav from './Nav/SideNav';
+import SideNav from '../Nav/SideNav';
 
-class Container extends Component {
+const ContentTemplate = (props) =>{
 
-    render(){
         return(
             <Row style={{marginTop: "50px", height: "100vh"}}>
             <Col sm={9}>
-                Test
+                {props.children}
             </Col>
             <Col sm={3}>
               <SideNav />
             </Col>
           </Row>
         )
-    }
 }
 
-export default Container;
+export default ContentTemplate;
