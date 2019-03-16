@@ -6,7 +6,7 @@ import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { PersistGate } from 'redux-persist/es/integration/react';
 import configureStore from './store/index';
-import Routes from './routes/index';
+import Routes from './Routes/index';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/app.scss';
