@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Button, Form, FormGroup, Input, Label } from "reactstrap";
+import {  Form, FormGroup, Input, Label } from "reactstrap";
 
 class Login extends Component {
   constructor(props) {
@@ -27,9 +27,11 @@ class Login extends Component {
     const { onFormSubmit, history } = this.props;
     onFormSubmit(this.state)
       .then(() => {
-        history.push('/dashboard')
+        history.push('/dashboard');
       })
-      .catch(e => console.log(`Error: ${e}`));
+      .catch(e =>{ 
+        console.log(`Error: ${e}`)
+      });
   }
 
   render() {

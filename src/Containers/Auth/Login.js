@@ -6,6 +6,7 @@ import { login } from '../../store/actions/Auth/user';
 class Login extends Component {
   
   onFormSubmit = (data) => {
+    console.log("container", data)
     const { onFormSubmit } = this.props;
     return onFormSubmit(data)
       .catch((err) => { this.setState({ errorMessage: err }); throw err; });
@@ -18,8 +19,7 @@ class Login extends Component {
       history
    
     } = this.props;
-    console.log("login",this.props)
-
+    
     return (
       <Layout
         user={user}

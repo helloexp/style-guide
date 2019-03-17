@@ -1,6 +1,10 @@
 import Firebase from '../../../lib/Firebase';
 
-export function login(email, password) {
+export function login(formData) {
+    const {
+        email,
+        password
+    } = formData
     return dispatch => new Promise((resolve, reject) => {
         Firebase.auth().signInWithEmailAndPassword(email, password)
         .then(() => {
@@ -8,6 +12,9 @@ export function login(email, password) {
                 type: 'USER_LOGIN',
                 data: true
             });
-        }).catch(reject);
+        }).catch((reject=>{
+            console.log(reject)
+            console.log('err', email)
+        }));
     })
 }
