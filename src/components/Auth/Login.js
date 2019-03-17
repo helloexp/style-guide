@@ -22,12 +22,12 @@ class Login extends Component {
     });
   }
 
-  handleSubmit = event => {
+  handleSubmit = (event) => {
     event.preventDefault();
     const { onFormSubmit, history } = this.props;
     onFormSubmit(this.state)
       .then(() => {
-        history.push('/dashboard');
+         history.push('/dashboard');
       })
       .catch(e =>{ 
         console.log(`Error: ${e}`)

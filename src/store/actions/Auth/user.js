@@ -7,14 +7,13 @@ export function login(formData) {
     } = formData
     return dispatch => new Promise((resolve, reject) => {
         Firebase.auth().signInWithEmailAndPassword(email, password)
-        .then(() => {
+        .then((res) => {
             dispatch({
                 type: 'USER_LOGIN',
                 data: true
             });
         }).catch((reject=>{
             console.log(reject)
-            console.log('err', email)
         }));
     })
 }

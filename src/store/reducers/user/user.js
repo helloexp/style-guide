@@ -8,7 +8,7 @@ export default function userReducer(state = initialState, action) {
       if (action.data) {
         return {
           ...state,
-          login: action.data
+          admin: action.data
         };
       }
       return initialState;

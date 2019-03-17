@@ -24,7 +24,6 @@ const Root = () => (
             <Routes />  
         </Router>
     </Provider>
-
 );
 
 ReactDOM.render(<Root />, rootElement);
