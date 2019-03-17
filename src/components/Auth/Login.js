@@ -27,7 +27,7 @@ class Login extends Component {
     const { onFormSubmit, history } = this.props;
     onFormSubmit(this.state)
       .then(() => {
-        history.push('/')
+        history.push('/dashboard')
       })
       .catch(e => console.log(`Error: ${e}`));
   }

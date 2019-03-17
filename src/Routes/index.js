@@ -61,7 +61,7 @@ const Routes = () => (
 
         <Route
             exact
-            path="/admin"
+            path="/dashboard"
             render={props => (
                 <PageTemplate>
                     <AdminPage {...props}/>
