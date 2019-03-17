@@ -14,9 +14,9 @@ import StyleRefPage from '../components/PageTemplates/Pages/StyleRef';
 import ColorsPage from '../components/PageTemplates/Pages/Colors';
 import LoginPage from '../components/Auth/Login'
 
+// Containers
+import LoginContainer from '../containers/Auth/Login';
 
-// Components
-import Text from '../components/Text/Text';
 
 
 
@@ -58,15 +58,7 @@ const Routes = () => (
                 </PageTemplate>
             )}
         />
-        <Route
-            exact
-            path="/components/text"
-            render={props => (
-                <PageTemplate>
-                        <ComponentsPage {...props} Layout={<Text/>}/>
-                </PageTemplate>
-            )}
-        />
+
         <Route
             exact
             path="/admin"
@@ -81,7 +73,7 @@ const Routes = () => (
             path="/login"
             render={props => (
                 <PageTemplate>
-                    <LoginPage {...props}/>
+                   <LoginContainer {...props} Layout={LoginPage}/>
                 </PageTemplate>
             )}
         />

@@ -1,13 +1,13 @@
-import Firebase from 'firebase';
-
+import Firebase from '../../../lib/Firebase';
 
 export function login(email, password) {
-
-    Firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        // ...
-      });
-    return { type: SET_VISIBILITY_FILTER, filter }
+    return dispatch => new Promise((resolve, reject) => {
+        Firebase.auth().signInWithEmailAndPassword(email, password)
+        .then(() => {
+            dispatch({
+                type: 'USER_LOGIN',
+                data: true
+            });
+        }).catch(reject);
+    })
 }
