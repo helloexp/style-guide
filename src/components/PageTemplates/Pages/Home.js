@@ -45,6 +45,7 @@ const Home = () => {
                     </Col>
                 </Row>
             </div>
+            <Link className="nav-link"  to="/login">Login</Link>
  
         </div>
     )

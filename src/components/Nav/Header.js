@@ -6,9 +6,9 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
-  NavLink,
-
   Input} from 'reactstrap';
+import { Link } from 'react-router-dom'
+
   
 
 export default class Header extends Component {
@@ -34,19 +34,19 @@ export default class Header extends Component {
           <Collapse isOpen={this.state.isOpen} navbar>
           <Nav className="ml-auto" navbar>
           <NavItem>
-            <NavLink href="/components">
+            <Link className="nav-link" to="/components">
               Components
-            </NavLink>
+            </Link>
           </NavItem>
           <NavItem>
-            <NavLink href="/style">
+            <Link className="nav-link"  to="/style">
               Style
-            </NavLink>
+            </Link>
           </NavItem>
           <NavItem>
-            <NavLink href="/colors">
+            <Link className="nav-link"  to="/colors">
               Colors
-            </NavLink>
+            </Link>
           </NavItem>
           <Input style={{ width: "250px"}} placeholder="Search"/>
           </Nav>

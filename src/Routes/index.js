@@ -16,6 +16,7 @@ import LoginPage from '../components/Auth/Login'
 
 // Containers
 import LoginContainer from '../Containers/Auth/Login';
+import AdminContainer from '../Containers/Admin';
 
 
 
@@ -64,7 +65,7 @@ const Routes = () => (
             path="/dashboard"
             render={props => (
                 <PageTemplate>
-                    <AdminPage {...props}/>
+                    <AdminContainer {...props} Layout={AdminPage}/>
                 </PageTemplate>
             )}
         />

@@ -25,3 +25,19 @@ export function login(formData) {
         });
     })
 }
+
+export function logout() {
+
+    return dispatch => new Promise((resolve, reject) => {
+      
+        return Firebase.auth().signOut()
+        .then(() => {
+            return resolve(dispatch({
+                type: 'USER_LOGIN',
+                data: false
+            }));
+        }).catch((reject)=>{
+            console.log(reject)
+        });
+    })
+}
