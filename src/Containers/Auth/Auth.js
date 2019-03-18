@@ -1,18 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-
 import { login, logout } from '../../store/actions/Auth/user';
 
 class Auth extends Component {
   
   login = (data) => {
     const { login } = this.props;
-    console.log("container", data)
 
     return login(data)
-      .then(() => {
-        console.log('success')
-      })
       .catch((err) => { this.setState({ errorMessage: err }); throw err; });
   }
 

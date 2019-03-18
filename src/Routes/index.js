@@ -8,7 +8,7 @@ import PageTemplate from '../components/PageTemplates/PageTemplate';
 
 //Pages
 import HomePage from '../components/PageTemplates/Pages/Home';
-import AdminPage from '../components/PageTemplates/Pages/Admin'
+import AdminPage from '../components/Admin/Admin'
 import ComponentsPage from '../components/PageTemplates/Pages/Components';
 import StyleRefPage from '../components/PageTemplates/Pages/StyleRef';
 import ColorsPage from '../components/PageTemplates/Pages/Colors';
@@ -59,7 +59,6 @@ const Routes = () => (
                 </PageTemplate>
             )}
         />
-
         <Route
             exact
             path="/dashboard"

@@ -1,6 +1,7 @@
 
 @import 'global/utils/_fonts';
 @import 'global/utils/breakpoints';
+@import 'global/colors/colors';
 
 //Fonts
 @font-face {
@@ -24,6 +25,7 @@ body {
 	padding: 15px;
 }
 
+
 .card{
 	height: 200px;
 	border-radius: 6px;
@@ -45,5 +47,11 @@ body {
 	max-width: 500px;
 	margin-left:auto;
 	margin-right:auto;
+}
+
+.active{
+	background-color: $red;
+	color: $white;
+	border: none;
 }
 
