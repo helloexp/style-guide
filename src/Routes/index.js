@@ -15,7 +15,7 @@ import ColorsPage from '../components/PageTemplates/Pages/Colors';
 import LoginPage from '../components/Auth/Login'
 
 // Containers
-import LoginContainer from '../Containers/Auth/Login';
+import AuthContainer from '../Containers/Auth/Auth';
 import AdminContainer from '../Containers/Admin';
 
 
@@ -74,7 +74,7 @@ const Routes = () => (
             path="/login"
             render={props => (
                 <PageTemplate>
-                   <LoginContainer {...props} Layout={LoginPage}/>
+                   <AuthContainer {...props} Layout={LoginPage}/>
                 </PageTemplate>
             )}
         />

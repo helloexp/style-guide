@@ -24,9 +24,9 @@ class Login extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    const { onFormSubmit, history } = this.props;
+    const { login, history } = this.props;
     console.log("component", this.props)
-    onFormSubmit(this.state)
+    login(this.state)
       .then((res) => {
           console.log("success",res)
           history.push('/dashboard');

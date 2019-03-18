@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { login } from '../../store/actions/Auth/user';
+import { login, logout } from '../../store/actions/Auth/user';
 
-class Login extends Component {
+class Auth extends Component {
   
-  onFormSubmit = (data) => {
-    const { onFormSubmit } = this.props;
+  login = (data) => {
+    const { login } = this.props;
     console.log("container", data)
 
-    return onFormSubmit(data)
+    return login(data)
       .then(() => {
         console.log('success')
       })
@@ -20,14 +20,16 @@ class Login extends Component {
     const {
       user,
       Layout,
-      history
+      history,
+      logout
     } = this.props;
     
     return (
       <Layout
         user={user}
         history={history}
-        onFormSubmit={this.onFormSubmit}
+        login={this.login}
+        logout={logout}
       />
     );
   }
@@ -38,7 +40,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = {
-  onFormSubmit: login,
+  login: login,
+  logout: logout
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Login);
+export default connect(mapStateToProps, mapDispatchToProps)(Auth);

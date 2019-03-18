@@ -25,7 +25,13 @@ export default class Header extends Component {
       isOpen: !this.state.isOpen
     });
   }
+
+  logout = () =>{
+    this.props.logout();
+    this.props.history.push('/')
+  }
   render() {
+    console.log(this.props)
     return (
       <div >
         <Navbar color="light" light expand="md">
@@ -48,6 +54,14 @@ export default class Header extends Component {
               Colors
             </Link>
           </NavItem>
+          { this.props.user.admin ? 
+          <NavItem>
+            <Link className="nav-link" style={{color: "#000"}} to="#" onClick={this.logout}>
+              Logout
+            </Link>
+          </NavItem>
+          : null
+          }
           <Input style={{ width: "250px"}} placeholder="Search"/>
           </Nav>
           </Collapse>
