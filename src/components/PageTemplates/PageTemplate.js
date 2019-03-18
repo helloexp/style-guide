@@ -7,13 +7,13 @@ import Footer from '../PageTemplates/Footer';
 
 const PageTemplate = (props) => {
   return (
-    <Container fluid style={{}}>
+    <div >
       <Header />
       <Container style={{ marginTop:"40px", marginBottom: "50px",minHeight: "calc(100vh - 187px)"}}>
         {props.children}
       </Container>
       <Footer />
-    </Container>
+    </div>
   )
 }
 

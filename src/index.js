@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import * as serviceWorker from './serviceWorker';
+import { PersistGate } from 'redux-persist/es/integration/react';
 
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
@@ -13,16 +14,18 @@ import './styles/app.scss';
 import './styles/global/main.scss';
 
 
-const {  store } = configureStore();
+const { persistor, store } = configureStore();
 // persistor.purge(); // Debug to clear persist
 
 const rootElement = document.getElementById('root');
 
 const Root = () => (
     <Provider store={store}>
-        <Router>
-            <Routes />  
-        </Router>
+        <PersistGate persistor={persistor}>
+            <Router>
+                <Routes />  
+            </Router>
+        </PersistGate>
     </Provider>
 );
 

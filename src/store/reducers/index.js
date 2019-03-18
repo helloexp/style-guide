@@ -1,4 +1,4 @@
-import User from './user/user';
+import user from './user/user';
 const rehydrated = (state = false, action) => {
     switch (action.type) {
       case 'persist/REHYDRATE':
@@ -10,5 +10,5 @@ const rehydrated = (state = false, action) => {
 
   export default {
       rehydrated,
-      User
+      user
   }

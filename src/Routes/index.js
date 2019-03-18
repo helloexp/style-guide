@@ -15,7 +15,7 @@ import ColorsPage from '../components/PageTemplates/Pages/Colors';
 import LoginPage from '../components/Auth/Login'
 
 // Containers
-import LoginContainer from '../containers/Auth/Login';
+import LoginContainer from '../Containers/Auth/Login';
 
 
 

@@ -5,15 +5,23 @@ export function login(formData) {
         email,
         password
     } = formData
+
+
     return dispatch => new Promise((resolve, reject) => {
-        Firebase.auth().signInWithEmailAndPassword(email, password)
-        .then((res) => {
-            dispatch({
+        if (!email) return reject({
+            message: "Missing Email"
+          });
+          if (!password) return reject({
+            message: "Missing Password"
+          });
+        return Firebase.auth().signInWithEmailAndPassword(email, password)
+        .then(() => {
+            return resolve(dispatch({
                 type: 'USER_LOGIN',
                 data: true
-            });
-        }).catch((reject=>{
+            }));
+        }).catch((reject)=>{
             console.log(reject)
-        }));
+        });
     })
 }
