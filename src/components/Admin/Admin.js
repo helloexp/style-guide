@@ -11,7 +11,7 @@ const Components = (props) => {
                 <h1>Admin Dashboard</h1> 
             </Jumbotron>
             <div>
-                <AddItemForm />
+                <AddItemForm onSubmitAdd={props.onSubmitAdd}/>
             </div>
             
             

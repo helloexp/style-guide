@@ -6,21 +6,48 @@ class AddItem extends Component{
     constructor(props){
         super(props);
         this.state = {
-            type: 0
+            category: 'slider',
+            slug: 'slides',
+            content: 'test'
 
         }
-        this.onTypeClick = this.onTypeClick.bind(this)
+        this.onTypeClick = this.onTypeClick.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+
     }
     onTypeClick = (type) => {
         this.setState({ type });
       }
+      validateForm() {
+        return this.state.category.length > 0 && this.state.slug.length > 0;
+      }
+    
+      handleChange = event => {
+        this.setState({
+          [event.target.name]: event.target.value
+        });
+      }
+    
+      handleSubmit = (event) => {
+        event.preventDefault();
+        const { onSubmitAdd, history } = this.props;
+        console.log("component", this.props)
+        onSubmitAdd(this.state)
+          .then((res) => {
+              console.log("success",res)
+              history.push('/dashboard');
+          })
+          .catch(e =>{ 
+            console.log(`Error: ${e}`)
+          });
+      }
+    
 
     render(){
-        console.log(this.state.type)
         return(
             <div className="form-container">
                 <h3>Add new item</h3>
-                <Form>
+                <Form onSubmit={this.handleSubmit}>
                     <FormGroup>
                         <ButtonGroup>
                             <button  onClick={() => this.onTypeClick(0)} className={this.state.type === 0 ? "active": ""}>Component</button>
@@ -31,6 +58,13 @@ class AddItem extends Component{
                     <FormGroup>
                         <Input placeholder="Enter Content"/>
                     </FormGroup>
+                        <button
+                        disabled={!this.validateForm()}
+                        className={!this.validateForm()? "disable-btn": ""}
+                        type="submit"
+                        >
+                            Save
+                        </button>
                 </Form>
             </div>
            

@@ -1,28 +1,28 @@
 import Firebase from '../../../lib/Firebase';
-var FirebaseRef = Firebase.database.ref();
+let FirebaseRef = Firebase.database();
 
 
-export default function addItem(formData){
+export function addItem(formData){
     const {
         category,
         slug,
         content
     } = formData
+    console.log(formData)
 
 
     return dispatch => new Promise((resolve, reject) => {
-        return FirebaseRef.child(`Components/${category}/${slug}/`).set(
+        return FirebaseRef.ref(`Components/${category}/${slug}/`).set(
             category,
             slug,
             content
         )
         .then(()=>console.log('new content added'))
         .catch(() => console.log("content update err"))
-
     })
 }
 
-export default function addItem(formData){
+export function editItem(formData){
     const {
         category,
         slug,
@@ -31,13 +31,12 @@ export default function addItem(formData){
 
 
     return dispatch => new Promise((resolve, reject) => {
-        return FirebaseRef.child(`Components/${category}/${slug}/`).update(
+        return FirebaseRef.ref(`Components/${category}/${slug}/`).update(
             category,
             slug,
             content
         )
         .then(()=>console.log('new content updated'))
         .catch(() => console.log("content update err"))
-
     })
 }
