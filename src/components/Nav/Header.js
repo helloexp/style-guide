@@ -29,6 +29,7 @@ export default class Header extends Component {
   logout = (event) =>{
     event.preventDefault();
     this.props.logout();
+    this.toggle();
     this.props.history.push('/')
   }
   render() {
@@ -55,22 +56,28 @@ export default class Header extends Component {
               Colors
             </Link>
           </NavItem>
+          {this.props.user.admin ? 
+            <NavItem>
+            <Link className="nav-link"  to="/dashboard" onClick={this.toggle  }>Dashboard</Link>
+           </NavItem>
+          : null}
           { this.props.user.admin ? 
-          <NavItem>
-            <Link className="nav-link" style={{color: "#000"}} to="#" onClick={this.logout}>
-              Logout
-            </Link>
-          </NavItem>
+            <NavItem>
+              <Link className="nav-link" style={{color: "#000"}} to="#" onClick={this.logout}>
+                Logout
+              </Link>
+            </NavItem>
             
           :
           <NavItem>
-            <Link className="nav-link" style={{color: "#000"}}  to="/login">Login</Link>
+            <Link className="nav-link" style={{color: "#000"}}  to="/login" onClick={this.toggle}>Login</Link>
            </NavItem>
           }
+          
           <Input style={{ width: "250px"}} placeholder="Search"/>
           </Nav>
           </Collapse>
-        </Navbar>
+        </Navbar> 
       </div>
     );
   }
