@@ -14,6 +14,11 @@
 	font-family: "UniqloProRegular";
 	src: url("../assets/fonts/UniqloProRegular.ttf");
 }
+
+
+@import './app/Nav/adminSideNav';
+
+
 html, body {
     height: 100%;
 }
@@ -24,7 +29,18 @@ body {
 	background-color: #f6f6f6;
 	padding: 15px;
 }
+.page-template{
+	position: relative;
+}
 
+.admin-container{
+	padding-left: 200px;
+
+}
+
+.contents-container{
+	margin: 40px 0;
+}
 
 .card{
 	height: 200px;
@@ -78,6 +94,14 @@ body {
 	h1{
 		margin:0;
 		padding: 20px 0;
+	}
+}
+
+
+.form-container{
+	form{
+		max-width: 500px;
+		margin: 0 auto;
 	}
 }
 

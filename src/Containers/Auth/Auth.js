@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { login, logout } from '../../store/actions/Auth/user';
 
 class Auth extends Component {
-  
+
   login = (data) => {
     const { login } = this.props;
 
@@ -12,6 +12,7 @@ class Auth extends Component {
   }
 
   render = () => {
+    console.log(this.props)
     const {
       user,
       Layout,

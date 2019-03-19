@@ -9,11 +9,13 @@ import AuthContainer from '../../Containers/Auth/Auth'
 
 const PageTemplate = (props) => {
   return (
-    <div >
-      <AuthContainer Layout={Header}/>
-      <Container style={{ marginTop:"40px", marginBottom: "50px",minHeight: "calc(100vh - 187px)"}}>
-        {props.children}
-      </Container>
+    <div className="page-template" >
+      <AuthContainer history={props.children.props.history} Layout={Header}/>
+      <div className="contents-container">
+        <Container  style={{ minHeight: "calc(100vh - 187px)"}}>
+          {props.children}
+        </Container>
+      </div>
       <Footer />
     </div>
   )

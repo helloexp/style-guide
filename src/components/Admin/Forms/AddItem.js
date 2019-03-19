@@ -18,7 +18,7 @@ class AddItem extends Component{
     render(){
         console.log(this.state.type)
         return(
-            <div>
+            <div className="form-container">
                 <h3>Add new item</h3>
                 <Form>
                     <FormGroup>
@@ -26,6 +26,10 @@ class AddItem extends Component{
                             <button  onClick={() => this.onTypeClick(0)} className={this.state.type === 0 ? "active": ""}>Component</button>
                             <button  onClick={() => this.onTypeClick(1)} className={this.state.type === 1 ? "active": ""}>Style</button>
                         </ButtonGroup>
+
+                    </FormGroup>
+                    <FormGroup>
+                        <Input placeholder="Enter Content"/>
                     </FormGroup>
                 </Form>
             </div>

@@ -4,6 +4,7 @@ import { Switch, Route } from 'react-router-dom';
 // Templates
 import Error from '../components/PageTemplates/Error'
 import PageTemplate from '../components/PageTemplates/PageTemplate';
+import PageSideNavTemplate from '../components/PageTemplates/PageSideNavTemplate'
 
 //Pages
 import HomePage from '../components/PageTemplates/Pages/Home';
@@ -59,9 +60,9 @@ const Routes = () => (
             exact
             path="/dashboard"
             render={props => (
-                <PageTemplate>
+                <PageSideNavTemplate>
                     <AdminContainer {...props} Layout={AdminPage}/>
-                </PageTemplate>
+                </PageSideNavTemplate>
             )}
         />
           <Route
