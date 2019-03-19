@@ -6,15 +6,14 @@ export function addItem(formData){
     const {
         category,
         slug,
-        content
+        content,
+        type
     } = formData
     console.log(formData)
 
 
     return dispatch => new Promise((resolve, reject) => {
-        return FirebaseRef.ref(`Components/${category}/${slug}/`).set(
-            category,
-            slug,
+        return FirebaseRef.ref(`${type}/${category}/${slug}/`).set(
             content
         )
         .then(()=>console.log('new content added'))
@@ -26,17 +25,17 @@ export function editItem(formData){
     const {
         category,
         slug,
-        content
+        content,
+        type
     } = formData
+    console.log(formData)
 
 
     return dispatch => new Promise((resolve, reject) => {
-        return FirebaseRef.ref(`Components/${category}/${slug}/`).update(
-            category,
-            slug,
+        return FirebaseRef.ref(`${type}/${category}/${slug}/`).update(
             content
         )
-        .then(()=>console.log('new content updated'))
+        .then(()=>console.log('new content edited'))
         .catch(() => console.log("content update err"))
     })
 }

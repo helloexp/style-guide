@@ -6,8 +6,9 @@ class AddItem extends Component{
     constructor(props){
         super(props);
         this.state = {
-            category: 'slider',
-            slug: 'slides',
+            type:"UI",
+            category: 'buttons',
+            slug: 'buttons',
             content: 'test'
 
         }
@@ -61,8 +62,7 @@ class AddItem extends Component{
                         <button
                         disabled={!this.validateForm()}
                         className={!this.validateForm()? "disable-btn": ""}
-                        type="submit"
-                        >
+                        type="submit">
                             Save
                         </button>
                 </Form>

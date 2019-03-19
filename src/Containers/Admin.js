@@ -4,9 +4,6 @@ import { addItem, editItem } from '../store/actions/Content/contents';
 
 
 class Admin extends Component {
-  
-
-
   render = () => {
     const {
       user,
