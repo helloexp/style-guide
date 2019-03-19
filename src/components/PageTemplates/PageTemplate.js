@@ -20,5 +20,4 @@ const PageTemplate = (props) => {
     </div>
   )
 }
-
 export default PageTemplate;

@@ -11,7 +11,7 @@ class AddItem extends Component{
         }
         this.onTypeClick = this.onTypeClick.bind(this)
     }
-    onTypeClick(type)  {
+    onTypeClick = (type) => {
         this.setState({ type });
       }
 
