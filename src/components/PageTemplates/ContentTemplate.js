@@ -3,7 +3,6 @@ import {Row, Col} from 'reactstrap';
 import SideNav from '../Nav/SideNav';
 
 const ContentTemplate = (props) =>{
-
         return(
             <Row style={{marginTop: "50px", height: "100vh"}}>
             <Col sm={9}>

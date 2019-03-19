@@ -2,7 +2,6 @@ import Firebase from '../../../lib/Firebase';
 let FirebaseRef = Firebase.database();
 
 export function getComponents(){
-    console.log("components")
     return dispatch => new Promise((resolve, reject) => {
         return Firebase.database().ref('Components/').once('value').then((snapshot) => {
             const components = snapshot.val() || [];

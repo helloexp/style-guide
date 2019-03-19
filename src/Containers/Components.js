@@ -24,6 +24,7 @@ class Components extends Component {
         history,
         components
     } = this.props;
+
     
     return (
       <Layout
@@ -36,7 +37,7 @@ class Components extends Component {
 }
 
 const mapStateToProps = state => ({
-  components: state.components || {}
+  components: state.contents.components || {}
 });
 
 const mapDispatchToProps = {

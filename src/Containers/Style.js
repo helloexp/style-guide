@@ -36,7 +36,7 @@ class Style extends Component {
 }
 
 const mapStateToProps = state => ({
-  style: state.style || {}
+  style: state.contents.style || {}
 });
 
 const mapDispatchToProps = {
