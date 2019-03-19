@@ -41,17 +41,17 @@ export default class Header extends Component {
           <Collapse isOpen={this.state.isOpen} navbar>
           <Nav className="ml-auto" navbar>
           <NavItem>
-            <Link className="nav-link" to="/components">
+            <Link className="nav-link" to="/components" onClick={this.toggle}>
               Components
             </Link>
           </NavItem>
           <NavItem>
-            <Link className="nav-link"  to="/style">
+            <Link className="nav-link"  to="/style" onClick={this.toggle}>
               Style
             </Link>
           </NavItem>
           <NavItem>
-            <Link className="nav-link"  to="/colors">
+            <Link className="nav-link"  to="/colors" onClick={this.toggle}>
               Colors
             </Link>
           </NavItem>
