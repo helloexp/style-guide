@@ -17,6 +17,8 @@ import LoginPage from '../components/Auth/Login'
 // Containers
 import AuthContainer from '../Containers/Auth/Auth';
 import AdminContainer from '../Containers/Admin';
+import ComponentContainer from '../Containers/Components';
+import StyleContainer from '../Containers/Style'
 
 const Routes = () => (
     <Switch>
@@ -34,7 +36,7 @@ const Routes = () => (
             path="/components"
             render={props => (
                 <PageTemplate>
-                    <ComponentsPage {...props}/>
+                    <ComponentContainer {...props} Layout={ComponentsPage}/> 
                 </PageTemplate>
             )}
         />
@@ -43,7 +45,7 @@ const Routes = () => (
             path="/style"
             render={props => (
                 <PageTemplate>
-                    <StyleRefPage {...props}/>
+                    <StyleContainer {...props} Layout={StyleRefPage} />
                 </PageTemplate>
             )}
         />

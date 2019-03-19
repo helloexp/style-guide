@@ -1,4 +1,5 @@
 import user from './user/user';
+import contents from './contents/contents';
 const rehydrated = (state = false, action) => {
     switch (action.type) {
       case 'persist/REHYDRATE':
@@ -10,5 +11,6 @@ const rehydrated = (state = false, action) => {
 
   export default {
       rehydrated,
-      user
+      user,
+      contents
   }

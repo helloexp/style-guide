@@ -2,14 +2,36 @@ import Firebase from '../../../lib/Firebase';
 let FirebaseRef = Firebase.database();
 
 export function getComponents(){
+    console.log("components")
     return dispatch => new Promise((resolve, reject) => {
-        return FirebaseRef.ref(`Components/`).
-        then(()=>{
-            console.log("got data")
-        })
-        .catch((err) => console.log(err) )
+        return Firebase.database().ref('Components/').once('value').then((snapshot) => {
+            const components = snapshot.val() || [];
+            return resolve(dispatch({
+                type: 'CONTENTS_COMPONENTS',
+                data: components
+            }));
+        }) 
+        
     })
 }
+
+export function getStyle(){
+    return dispatch => new Promise((resolve, reject) => {
+        return Firebase.database().ref('Style/').once('value').then((snapshot) => {
+            const style = snapshot.val() || [];
+            return resolve(dispatch({
+                type: 'CONTENTS_STYLE',
+                data: style
+            }));
+        }) 
+        
+    })
+}
+
+
+
+
+
 
 export function addItem(formData){
     const {

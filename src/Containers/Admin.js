@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addItem, editItem } from '../store/actions/Content/contents';
+import { addItem, editItem, deleteItem } from '../store/actions/Content/contents';
 
 
 class Admin extends Component {
@@ -10,7 +10,8 @@ class Admin extends Component {
       Layout,
       history,
       addContent,
-      editContent
+      editContent,
+      deleteContent
     } = this.props;
     
     return (
@@ -19,6 +20,7 @@ class Admin extends Component {
         history={history}
         onSubmitAdd={addContent}
         onSubmitEdit = {editContent}
+        delete = {deleteContent}
       />
     );
   }
@@ -30,7 +32,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = {
   addContent: addItem,
-  editContent: editItem
+  editContent: editItem,
+  deleteContent: deleteItem
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Admin);

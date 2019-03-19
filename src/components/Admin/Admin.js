@@ -17,10 +17,10 @@ class Admin extends Component{
                     <h1>Admin Dashboard</h1> 
                 </Jumbotron>
                 <div>
-                    <AddItemForm onSubmitAdd={this.props.onSubmitAdd}/>
+                    <AddItemForm onSubmitAdd={this.props.onSubmitAdd} />
                 </div>
                 <div>
-                    <EditItemForm onSubmitEdit={this.props.onSubmitEdit}/>
+                    <EditItemForm onSubmitEdit={this.props.onSubmitEdit} delete={this.props.delete}/>
                 </div>
             </div>
         )
