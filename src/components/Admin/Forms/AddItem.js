@@ -7,8 +7,8 @@ class AddItem extends Component{
         super(props);
         this.state = {
             type:"UI",
-            category: 'buttons',
-            slug: 'buttons',
+            category: 'typography',
+            slug: 'text',
             content: 'test'
 
         }

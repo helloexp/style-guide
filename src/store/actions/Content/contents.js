@@ -13,9 +13,10 @@ export function addItem(formData){
 
 
     return dispatch => new Promise((resolve, reject) => {
-        return FirebaseRef.ref(`${type}/${category}/${slug}/`).set(
+        return FirebaseRef.ref(`${type}/${category}/${slug}/`).set({
             content
-        )
+
+        })
         .then(()=>console.log('new content added'))
         .catch(() => console.log("content update err"))
     })
@@ -32,9 +33,9 @@ export function editItem(formData){
 
 
     return dispatch => new Promise((resolve, reject) => {
-        return FirebaseRef.ref(`${type}/${category}/${slug}/`).update(
+        return FirebaseRef.ref(`${type}/${category}/${slug}/`).update({
             content
-        )
+        })
         .then(()=>console.log('new content edited'))
         .catch(() => console.log("content update err"))
     })

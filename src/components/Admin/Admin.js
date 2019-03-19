@@ -1,6 +1,7 @@
 import React from 'react';
 import {Jumbotron} from 'reactstrap';
-import AddItemForm from './Forms/AddItem'
+import AddItemForm from './Forms/AddItem';
+import EditItemForm from './Forms/EditItem'
 // import ContentTemplate from '../ContentTemplate';
 
 
@@ -12,6 +13,9 @@ const Components = (props) => {
             </Jumbotron>
             <div>
                 <AddItemForm onSubmitAdd={props.onSubmitAdd}/>
+            </div>
+            <div>
+                <EditItemForm onSubmitEdit={props.onSubmitEdit}/>
             </div>
             
             
