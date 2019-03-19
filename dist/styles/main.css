@@ -22,6 +22,12 @@ a:hover {
   color: #ff0000;
   text-decoration: none; }
 
+h1, h2, h3 {
+  margin-bottom: 1.5rem; }
+
+h4, h5, h6 {
+  margin-bottom: 1.3rem; }
+
 h1 {
   font-size: 36px; }
 
@@ -48,8 +54,18 @@ button {
   color: #000;
   border: 2px solid #000; }
   button:hover {
-    background-color: #fff;
-    color: #000; }
+    background-color: #ff0000;
+    color: #fff;
+    border: 2px solid #ff0000; }
+
+.btn-container button {
+  display: block;
+  margin: 20px auto; }
+  @media all and (min-width: 568px) {
+    .btn-container button {
+      display: inline-block;
+      margin: 0;
+      margin-right: 20px; } }
 
 .flex {
   display: -webkit-box;

@@ -61,6 +61,7 @@ class Login extends Component {
           </FormGroup>
           <button
             disabled={!this.validateForm()}
+            className={!this.validateForm()? "disable-btn": ""}
             type="submit"
           >
             Login

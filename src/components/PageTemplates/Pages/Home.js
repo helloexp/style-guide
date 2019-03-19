@@ -13,9 +13,12 @@ const Home = () => {
                 <h3>
                     Download Style Assets
                 </h3>
-                <button>Default Stylesheet</button>
-                <button>Desktop Stylesheet</button>
-                <button>Mobile Stylesheet</button>
+                <div className="btn-container">
+                    <button>Default Stylesheet</button>
+                    <button>Desktop Stylesheet</button>
+                    <button>Mobile Stylesheet</button>
+                </div>
+             
             </div>
             <div className="section-divide">
                 <h3>
@@ -45,7 +48,6 @@ const Home = () => {
                     </Col>
                 </Row>
             </div>
-            <Link className="nav-link"  to="/login">Login</Link>
  
         </div>
     )

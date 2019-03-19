@@ -60,7 +60,11 @@ export default class Header extends Component {
               Logout
             </Link>
           </NavItem>
-          : null
+            
+          :
+          <NavItem>
+            <Link className="nav-link" style={{color: "#000"}}  to="/login">Login</Link>
+           </NavItem>
           }
           <Input style={{ width: "250px"}} placeholder="Search"/>
           </Nav>

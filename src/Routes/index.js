@@ -1,10 +1,9 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
+
 // Templates
 import Error from '../components/PageTemplates/Error'
 import PageTemplate from '../components/PageTemplates/PageTemplate';
-
-
 
 //Pages
 import HomePage from '../components/PageTemplates/Pages/Home';
@@ -17,9 +16,6 @@ import LoginPage from '../components/Auth/Login'
 // Containers
 import AuthContainer from '../Containers/Auth/Auth';
 import AdminContainer from '../Containers/Admin';
-
-
-
 
 const Routes = () => (
     <Switch>

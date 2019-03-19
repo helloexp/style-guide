@@ -29,6 +29,10 @@ body {
 .card{
 	height: 200px;
 	border-radius: 6px;
+	box-shadow: 1px 1px 15px rgba(0,0,0,.1);
+	h1,h2,h3,h4,h5,h6{
+		margin: 0;
+	}
 	&:hover{
 		box-shadow: 1px 1px 15px rgba(0,0,0,.3)
 	}
@@ -37,7 +41,6 @@ body {
 		height: 100%;
 	}
 	margin: 15px 0;;
-
 	@include bp(sm){
 		margin: 0;
 	}
@@ -54,4 +57,17 @@ body {
 	color: $white;
 	border: none;
 }
+
+
+.disable-btn{
+	background-color: #ccc;
+	color: #444;
+	cursor: not-allowed;
+	&:hover{
+		background-color: #ccc;
+		border: 2px solid #333;
+		color: #444;
+	}
+}
+
 
