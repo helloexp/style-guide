@@ -12,7 +12,7 @@ const Components = (props) => {
             <ContentTemplate>
                 {props.Layout ? props.Layout :
                     <div>
-                        <h1>Basic Snippets</h1>
+                        <h3>Basic Snippets</h3>
                         <p>Most popular items</p>
                     </div>
                 

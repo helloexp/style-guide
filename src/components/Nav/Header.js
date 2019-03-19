@@ -26,7 +26,8 @@ export default class Header extends Component {
     });
   }
 
-  logout = () =>{
+  logout = (event) =>{
+    event.preventDefault();
     this.props.logout();
     this.props.history.push('/')
   }
