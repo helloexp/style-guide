@@ -19,6 +19,9 @@ class Components extends Component {
         })
 
     }
+    componentWillUnmount(){
+        this.state.slug = '';
+    }
     render(){
         const { slug } = this.state;
         if(slug != null){
@@ -36,6 +39,7 @@ class Components extends Component {
         // console.log(this.props.components[getData])
         let getData = this.props.components[slug]
         console.log(getData)
+        console.log(slug)
 
         let content = '';
         if(getData != null){
@@ -71,7 +75,7 @@ class Components extends Component {
                     <h1>Components</h1>
                 </Jumbotron>
                 <ContentTemplate contents={this.props.components} type="components">
-                        { slug  && this.props.match.url == `/components/${slug}`?
+                        { slug ?
                             <div>
                                 <h1 className="text-cap">{slug}</h1>
                                 {content}

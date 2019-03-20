@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom'
     let links = sortKeys.map(slug => {
       return (
         <NavItem>
-            <Link className="text-cap nav-link" href={`/${type}/${slug}`}>{slug}</Link>
+            <Link className="text-cap nav-link" to={`/${type}/${slug}`}>{slug}</Link>
         </NavItem>
       )
     })
