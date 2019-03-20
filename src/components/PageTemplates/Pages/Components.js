@@ -13,6 +13,7 @@ class Components extends Component {
     }
     componentDidMount(){
         const slug = this.props.match.params.slug;
+        console.log("did mount",slug)
         this.setState({
             slug
         })
@@ -20,45 +21,50 @@ class Components extends Component {
     }
     render(){
         const { slug } = this.state;
-        console.log(this.props.match)
-        if(!this.props.components[slug]){
-            return (<ErrorPage />)
+        if(slug != null){
+            if( !this.props.components[slug] ){
+                return (<ErrorPage />)
+            }
         }
-        let getData = Object.keys(this.props.components).map( section => {
-            return this.props.components[slug]
-        })
+        
+        // console.log(this.props.components[slug])
+        // let getData = Object.keys(this.props.components).filter( section => {
+        //     console.log(this.props.components[section])
+        //     return (slug == section) ? this.props.components[section] : null
+        // })
+        // console.log(getData)
+        // console.log(this.props.components[getData])
+        let getData = this.props.components[slug]
+        console.log(getData)
 
-        let content = Object.values(getData).map((content,i) => {
-            let contentData =content[Object.keys(content)]
-            let contentSection = contentData.contents;
-            let getSectionData = Object.keys(contentSection).map(sectionData => {
-                let dataSet = contentSection[sectionData]
-                let sectionTitle = dataSet.section;
-                let sectionContent = Object.keys(dataSet.contents).map(contentData =>{
-                    return dataSet.contents[contentData];
+        let content = '';
+        if(getData != null){
+            content = Object.values(getData).map((content,i) => {
+                let contentData =content
+                console.log(content)
+                console.log(contentData)
+                let contentSection = contentData.contents;
+                let getSectionData = Object.keys(contentSection).map(sectionData => {
+                    let dataSet = contentSection[sectionData]
+                    let sectionTitle = dataSet.section;
+                    let sectionContent = Object.keys(dataSet.contents).map(contentData =>{
+                        return dataSet.contents[contentData];
+                    })
+                    return(
+                        <div>
+                            <h3>{sectionTitle}</h3>
+                            <p>{sectionContent}</p>
+                        </div>
+                    )
                 })
                 return(
-                    <div>
-                        <h3>{sectionTitle}</h3>
-                        <p>{sectionContent}</p>
+                    <div className="section-container">
+                        <h2>{contentData.title}</h2>
+                        <h3>{getSectionData}</h3>
                     </div>
                 )
-
             })
-       
-
-            return(
-                <div className="section-container">
-                    <h2>{contentData.title}</h2>
-                    <h3>{getSectionData}</h3>
-                </div>
-            )
-        })
-
-
-        
-
-
+        }
         return (
             <div>
                 <Jumbotron>
