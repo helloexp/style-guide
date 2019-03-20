@@ -31,14 +31,16 @@ class Components extends Component {
         let content = Object.values(getData).map((content,i) => {
             let contentData =content[Object.keys(content)]
             let contentSection = contentData.contents;
-            console.log(contentSection)
             let getSectionData = Object.keys(contentSection).map(sectionData => {
-                let sectionTitle = contentSection[sectionData].section;
-                let sectionContent;
+                let dataSet = contentSection[sectionData]
+                let sectionTitle = dataSet.section;
+                let sectionContent = Object.keys(dataSet.contents).map(contentData =>{
+                    return dataSet.contents[contentData];
+                })
                 return(
                     <div>
-                        <h3>SectionTitle</h3>
-                       
+                        <h3>{sectionTitle}</h3>
+                        <p>{sectionContent}</p>
                     </div>
                 )
 
