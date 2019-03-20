@@ -22,7 +22,8 @@ class Components extends Component {
     const {
         Layout,
         history,
-        components
+        components,
+        match
     } = this.props;
 
     
@@ -30,6 +31,7 @@ class Components extends Component {
       <Layout
         history={history}
         components={components}
+        match={match}
         
       />
     );

@@ -9,14 +9,12 @@ const ColorsPage = (props) => {
             <Jumbotron>
                 <h1>Colors</h1>
             </Jumbotron>
-            <ContentTemplate>
-                {props.Layout ? props.Layout :
+            {/* <ContentTemplate> */}
                     <div>
                         <h3>Basic Snippets</h3>
                         <p>Most popular items</p>
                     </div>
-                }
-            </ContentTemplate>
+            {/* </ContentTemplate> */}
         </div>
     )
 }

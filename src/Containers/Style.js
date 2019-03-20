@@ -22,13 +22,15 @@ class Style extends Component {
     const {
         Layout,
         history,
-        style
+        style,
+        match
     } = this.props;
     
     return (
       <Layout
         history={history}
         style={style}
+        match={match}
         
       />
     );

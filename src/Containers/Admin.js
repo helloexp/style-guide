@@ -11,7 +11,8 @@ class Admin extends Component {
       history,
       addContent,
       editContent,
-      deleteContent
+      deleteContent,
+      match
     } = this.props;
     
     return (
@@ -21,6 +22,7 @@ class Admin extends Component {
         onSubmitAdd={addContent}
         onSubmitEdit = {editContent}
         delete = {deleteContent}
+        match={match}
       />
     );
   }

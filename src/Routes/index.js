@@ -42,7 +42,26 @@ const Routes = () => (
         />
         <Route
             exact
+            path="/components/:slug"
+            render={props => (
+                <PageTemplate>
+                    <ComponentContainer {...props} Layout={ComponentsPage}/> 
+                </PageTemplate>
+            )}
+        />
+
+        <Route
+            exact
             path="/style"
+            render={props => (
+                <PageTemplate>
+                    <StyleContainer {...props} Layout={StyleRefPage} />
+                </PageTemplate>
+            )}
+        />
+        <Route
+            exact
+            path="/style/:slug"
             render={props => (
                 <PageTemplate>
                     <StyleContainer {...props} Layout={StyleRefPage} />

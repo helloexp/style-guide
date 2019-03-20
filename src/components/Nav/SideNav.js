@@ -1,27 +1,26 @@
 import React, {Component} from 'react';
 import { Nav, NavItem, NavLink } from 'reactstrap';
 
-export default class SideNav extends Component {
+ class SideNav extends Component {
+
   render() {
+    const { contents, type } = this.props
+    console.log(this.props)
+    let links = Object.keys(contents).map(slug => {
+      return (
+        <NavItem>
+            <NavLink href={`/${type}/${slug}`}>{slug}</NavLink>
+        </NavItem>
+      )
+    })
     return (
       <div className="sidebar-nav">
         <Nav vertical>
-          <NavItem>
-            <NavLink href="#">Link</NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink href="#">Link</NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink href="#">Another Link</NavLink>
-          </NavItem>
-        </Nav>
-        <hr />
-        <p>Link based</p>
-        <Nav vertical>
-          <NavLink href="#">Link</NavLink> <NavLink href="#">Link</NavLink> <NavLink href="#">Another Link</NavLink> <NavLink disabled href="#">Disabled Link</NavLink>
+          {links}
         </Nav>
       </div>
     );
   }
 }
+
+export default SideNav;
