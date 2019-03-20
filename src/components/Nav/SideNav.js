@@ -6,10 +6,11 @@ import { Nav, NavItem, NavLink } from 'reactstrap';
   render() {
     const { contents, type } = this.props
     console.log(this.props)
-    let links = Object.keys(contents).map(slug => {
+    let sortKeys = Object.keys(contents).sort();
+    let links = sortKeys.map(slug => {
       return (
         <NavItem>
-            <NavLink href={`/${type}/${slug}`}>{slug}</NavLink>
+            <NavLink className="text-cap" href={`/${type}/${slug}`}>{slug}</NavLink>
         </NavItem>
       )
     })
