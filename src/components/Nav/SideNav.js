@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { Nav, NavItem, NavLink } from 'reactstrap';
+import { Link } from 'react-router-dom'
 
  class SideNav extends Component {
 
@@ -10,7 +11,7 @@ import { Nav, NavItem, NavLink } from 'reactstrap';
     let links = sortKeys.map(slug => {
       return (
         <NavItem>
-            <NavLink className="text-cap" href={`/${type}/${slug}`}>{slug}</NavLink>
+            <Link className="text-cap nav-link" href={`/${type}/${slug}`}>{slug}</Link>
         </NavItem>
       )
     })
