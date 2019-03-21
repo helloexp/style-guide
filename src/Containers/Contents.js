@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { getContents } from '../store/actions/Content/contents';
 
 
-class Components extends Component {
+class Contents extends Component {
 
 
   componentDidMount(){
@@ -46,4 +46,4 @@ const mapDispatchToProps = {
   getContents: getContents
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Components);
+export default connect(mapStateToProps, mapDispatchToProps)(Contents);

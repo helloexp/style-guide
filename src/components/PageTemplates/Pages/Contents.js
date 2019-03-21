@@ -13,60 +13,76 @@ class Contents extends Component {
     }
 
     render(){
-        const  slug  = this.props.match.params.slug;
-        if(slug != null){
-            if( !this.props.components[slug] ){
-                return (<ErrorPage />)
-            }
+        const {
+            match,
+            contents
+        } = this.props;
+
+        const  slug  = match.params.slug;
+        const type = match.params.type;
+
+        const getData = contents.contents[type];
+
+
+
+        let content = '';
+        if(getData != null){
+            content = Object.values(getData).map((content,i) => {
+                let getSectionData = Object.keys(content).map((sectionData, i) => {
+                    let dataSet = content[sectionData].contents;
+                    let sectionTitle = content[sectionData].title;
+                    let sectionContent = Object.keys(dataSet).map((contentData, i) =>{
+                        let dataSection =  dataSet[i].contents;
+                        let sectionContentData =  Object.keys(dataSection).map(data => {
+                            console.log("data",dataSection[data])
+                            return (
+                                <div>
+                                    <p>{dataSection[data]}</p>
+                                </div>
+                            )
+                        })
+                        
+                        let sectionContentTitle = dataSet[i].section;
+                       
+                        return (
+                            <div>
+                                <p>{sectionContentTitle}</p>
+                                <p>{sectionContent}</p>
+                            </div>
+                        )
+                    })
+                    return(
+                        <div key={i}>
+                            <p><b>{sectionTitle}</b></p>
+                            {sectionContent}
+                        </div>
+                    )
+                })
+                return(
+                    <div className="section-container" key={i}>
+                        {/* <h2>{contentData.title}</h2> */}
+                        <h3>{getSectionData}</h3>
+                    </div>
+                )
+            })
         }
-
-        // let getData = this.props.components[slug]
-        // console.log("render",slug)
-
-        // let content = '';
-        // if(getData != null){
-        //     content = Object.values(getData).map((content,i) => {
-        //         let contentData =content
-        //         console.log(content)
-        //         console.log(contentData)
-        //         let contentSection = contentData.contents;
-        //         let getSectionData = Object.keys(contentSection).map((sectionData, i) => {
-        //             let dataSet = contentSection[sectionData]
-        //             let sectionTitle = dataSet.section;
-        //             let sectionContent = Object.keys(dataSet.contents).map(contentData =>{
-        //                 return dataSet.contents[contentData];
-        //             })
-        //             return(
-        //                 <div key={i}>
-        //                     <h3>{sectionTitle}</h3>
-        //                     <p>{sectionContent}</p>
-        //                 </div>
-        //             )
-        //         })
-        //         return(
-        //             <div className="section-container" key={i}>
-        //                 <h2>{contentData.title}</h2>
-        //                 <h3>{getSectionData}</h3>
-        //             </div>
-        //         )
-        //     })
-        // }
         return (
             <div>
                 <Jumbotron>
-                    <h1>Components</h1>
+                    <h1>{this.props.match.params.type}</h1>
                 </Jumbotron>
-                <ContentTemplate  type="components">
+                <ContentTemplate contents={getData}  type={type}>
                         { slug ?
                             <div>
                                 <h1 className="text-cap">{slug}</h1>
-                                {/* {content} */}
+                                {content}
                             </div>
                            
                         : 
                         <div>
                             <h3>Basic Snippets</h3>
                             <p>Most popular items</p>
+                            {slug}
                         </div>
                         }
 

@@ -35,8 +35,9 @@ const Routes = () => (
             )}
         />
         <Route
+            path="/guide/:type"
             exact
-            path="/:type"
+
             render={props => (
                 <PageTemplate>
                     <ContentsContainer {...props} Layout={ContentsPage}/> 
@@ -45,7 +46,8 @@ const Routes = () => (
         />
         <Route
             exact
-            path="/:type/:slug"
+
+            path="/guide/:type/:slug"
             render={props => (
                 <PageTemplate>
                     <ContentsContainer {...props} Layout={ContentsPage}/> 

@@ -33,7 +33,6 @@ export default class Header extends Component {
     this.props.history.push('/')
   }
   render() {
-    console.log(this.props)
     return (
       <div >
         <Navbar color="light" light expand="md">
@@ -42,12 +41,12 @@ export default class Header extends Component {
           <Collapse isOpen={this.state.isOpen} navbar>
           <Nav className="ml-auto" navbar>
           <NavItem>
-            <Link className="nav-link" to="/components" onClick={this.toggle}>
+            <Link className="nav-link" to="/guide/components/buttons" onClick={this.toggle}>
               Components
             </Link>
           </NavItem>
           <NavItem>
-            <Link className="nav-link"  to="/style" onClick={this.toggle}>
+            <Link className="nav-link"  to="/guide/style" onClick={this.toggle}>
               Style
             </Link>
           </NavItem>
