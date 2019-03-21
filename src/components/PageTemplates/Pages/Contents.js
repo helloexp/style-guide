@@ -20,53 +20,38 @@ class Contents extends Component {
 
         const  slug  = match.params.slug;
         const type = match.params.type;
-
         const getData = contents.contents[type];
+        if(!getData){
+            return <ErrorPage />
+        }
+       console.log(typeof(getData[slug]))
+        let content = null;
+        if(getData[slug]){
 
-
-
-        let content = '';
-        if(getData != null){
             content = Object.values(getData[slug]).map((content,i) => {
                 console.log(content)
-                let getSectionData = Object.keys(content.contents).map((data, i) => {
-                    let sectionData = content.contents[data];
-                    
-                    // console.log()
-                    // let dataSet = content[sectionData].contents;
-                    // let sectionTitle = content[sectionData].title;
-                    let sectionContent = Object.keys(sectionData.contents).map((contentData, i) =>{
-                        // let dataSection =  sectionData[i].contents;
-                        console.log(sectionData.contents[contentData])
-                        // let sectionContentData =  Object.keys(dataSection).map(data => {
-                        //     console.log("data",dataSection[data])
-                        //     return (
-                        //         <div>
-                        //             <p>{dataSection[data]}</p>
-                        //         </div>
-                        //     )
-                        // })
-                        
-                       
-                        return (
-                            <div>
-                                <p>{sectionData.contents[contentData]}</p>
+                    let getSectionData = Object.keys(content.contents).map((data, i) => {
+                        let sectionData = content.contents[data];
+                        let sectionContent = Object.keys(sectionData.contents).map((contentData, i) =>{
+                            return (
+                                <div>
+                                    <p>{sectionData.contents[contentData]}</p>
+                                </div>
+                            )
+                        })
+                        return(
+                            <div key={i}>
+                                <p><b>{sectionData.section}</b></p>
+                                {sectionContent}
                             </div>
                         )
                     })
                     return(
-                        <div key={i}>
-                            <p><b>{sectionData.section}</b></p>
-                            {sectionContent}
+                        <div className="section-container" key={i}>
+                            <h2>{content.title}</h2>
+                            <h3>{getSectionData}</h3>
                         </div>
                     )
-                })
-                return(
-                    <div className="section-container" key={i}>
-                        <h2>{content.title}</h2>
-                        <h3>{getSectionData}</h3>
-                    </div>
-                )
             })
         }
         return (
@@ -80,7 +65,6 @@ class Contents extends Component {
                                 <h1 className="text-cap">{slug}</h1>
                                 {content}
                             </div>
-                           
                         : 
                         <div>
                             <h3>Basic Snippets</h3>
@@ -88,14 +72,10 @@ class Contents extends Component {
                             {slug}
                         </div>
                         }
-
-                        
                 </ContentTemplate>
             </div>
         )
     }
-    
-
 }
 
 export default Contents;
