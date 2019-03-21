@@ -6,15 +6,27 @@ class contentForm extends Component{
     constructor(props){
         super(props);
         this.state = {
-            type:"Style",
-            category: 'typography',
-            slug: 'text',
-            content: []
+            category: '',
+            title: '',
+            contents: [{title: "test", contents:{}}],
+            value:{title:'',contents: {}}
 
         }
         this.onTypeClick = this.onTypeClick.bind(this);
         this.handleChange = this.handleChange.bind(this);
 
+    }
+
+    componentDidMount(){
+      var contentsData =  this.props.contents[this.props.match.params.slug];
+      console.log("data",contentsData)
+      if(contentsData){
+        var title ="test"
+
+      }
+      this.setState({
+        title
+      })
     }
     onTypeClick = (type) => {
         this.setState({ type });
@@ -29,12 +41,6 @@ class contentForm extends Component{
         });
       }
 
-      addSection = (e) => {
-        this.setState((prevState) => ({
-          content: [...prevState.content, {}],
-        }));
-      }
-    
       handleSubmit = (event) => {
         event.preventDefault();
         const { onSubmit, history } = this.props;
@@ -48,9 +54,21 @@ class contentForm extends Component{
             console.log(`Error: ${e}`)
           });
       }
+      addSection = () =>{
+        this.setState(state => {
+          const contents = [...state.contents, state.value];
+    
+          return {
+            contents,
+            value: {title:'',contents:{}},
+          };
+        });
+      }
     
 
     render(){
+          console.log(this.state)
+        
         return(
             <div className="form-container">
                 <Form onSubmit={this.handleSubmit}>
@@ -70,8 +88,7 @@ class contentForm extends Component{
                         </FormGroup>
                     </div>
                     <FormGroup>
-                        <button>Add Section</button>
-
+                        <button onClick={this.addSection}>Add Section</button>
                     </FormGroup>
                     <button
                         disabled={!this.validateForm()}

@@ -12,9 +12,11 @@ const editItem = (props) =>{
         <div>
             <h3>Edit Item</h3>
             <ContentForm 
-                content={data}
+                contents={data}
                 onSubmit={props.onSubmitEdit} 
-                history={props.history}/>
+                history={props.history}
+                match={props.match}
+                />
         </div> 
     )
  }

@@ -41,7 +41,7 @@ export default class Header extends Component {
           <Collapse isOpen={this.state.isOpen} navbar>
           <Nav className="ml-auto" navbar>
           <NavItem>
-            <Link className="nav-link" to="/guide/components/buttons" onClick={this.toggle}>
+            <Link className="nav-link" to="/guide/components" onClick={this.toggle}>
               Components
             </Link>
           </NavItem>

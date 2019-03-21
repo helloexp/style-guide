@@ -6,7 +6,7 @@ const AddItem = (props) =>{
    return(
         <div>
             <h3>Add new item</h3>
-            <ContentForm onSubmit={props.onSubmitAdd} history={props.history}/>
+            <ContentForm onSubmit={props.onSubmitAdd} history={props.history} match={props.match}/>
         </div> 
    )
 }

@@ -3,12 +3,13 @@
     width: 100%;
     .content-card-container{
     margin-top: 50px;
+    display: flex;
+    justify-content: space-evenly;
 
         .content-card{
             
             @include bp(sm){
                 width: 25%;
-                margin: 15px;
             }
         }
     }
