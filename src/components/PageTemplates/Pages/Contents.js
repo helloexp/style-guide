@@ -27,40 +27,43 @@ class Contents extends Component {
 
         let content = '';
         if(getData != null){
-            content = Object.values(getData).map((content,i) => {
-                let getSectionData = Object.keys(content).map((sectionData, i) => {
-                    let dataSet = content[sectionData].contents;
-                    let sectionTitle = content[sectionData].title;
-                    let sectionContent = Object.keys(dataSet).map((contentData, i) =>{
-                        let dataSection =  dataSet[i].contents;
-                        let sectionContentData =  Object.keys(dataSection).map(data => {
-                            console.log("data",dataSection[data])
-                            return (
-                                <div>
-                                    <p>{dataSection[data]}</p>
-                                </div>
-                            )
-                        })
+            content = Object.values(getData[slug]).map((content,i) => {
+                console.log(content)
+                let getSectionData = Object.keys(content.contents).map((data, i) => {
+                    let sectionData = content.contents[data];
+                    
+                    // console.log()
+                    // let dataSet = content[sectionData].contents;
+                    // let sectionTitle = content[sectionData].title;
+                    let sectionContent = Object.keys(sectionData.contents).map((contentData, i) =>{
+                        // let dataSection =  sectionData[i].contents;
+                        console.log(sectionData.contents[contentData])
+                        // let sectionContentData =  Object.keys(dataSection).map(data => {
+                        //     console.log("data",dataSection[data])
+                        //     return (
+                        //         <div>
+                        //             <p>{dataSection[data]}</p>
+                        //         </div>
+                        //     )
+                        // })
                         
-                        let sectionContentTitle = dataSet[i].section;
                        
                         return (
                             <div>
-                                <p>{sectionContentTitle}</p>
-                                <p>{sectionContent}</p>
+                                <p>{sectionData.contents[contentData]}</p>
                             </div>
                         )
                     })
                     return(
                         <div key={i}>
-                            <p><b>{sectionTitle}</b></p>
+                            <p><b>{sectionData.section}</b></p>
                             {sectionContent}
                         </div>
                     )
                 })
                 return(
                     <div className="section-container" key={i}>
-                        {/* <h2>{contentData.title}</h2> */}
+                        <h2>{content.title}</h2>
                         <h3>{getSectionData}</h3>
                     </div>
                 )
