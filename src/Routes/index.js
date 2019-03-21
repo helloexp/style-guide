@@ -83,6 +83,24 @@ const Routes = () => (
                 </PageSideNavTemplate>
             )}
         />
+        <Route
+            exact
+            path="/dashboard/:type/add"
+            render={props => (
+                <PageSideNavTemplate>
+                    <AdminContainer {...props} Layout={AddContentPage}/>
+                </PageSideNavTemplate>
+            )}
+        />
+        <Route
+            exact
+            path="/dashboard/:type/:slug/edit"
+            render={props => (
+                <PageSideNavTemplate>
+                    <AdminContainer {...props} Layout={EditContentPage}/>
+                </PageSideNavTemplate>
+            )}
+        />
 
         <Route
             exact

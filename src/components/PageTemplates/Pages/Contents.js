@@ -41,14 +41,14 @@ class Contents extends Component {
                         })
                         return(
                             <div key={i}>
-                                <p><b>{sectionData.section}</b></p>
+                                <p className="text-cap"><b>{sectionData.section}</b></p>
                                 {sectionContent}
                             </div>
                         )
                     })
                     return(
                         <div className="section-container" key={i}>
-                            <h2>{content.title}</h2>
+                            <h2 className="text-cap">{content.title}</h2>
                             <h3>{getSectionData}</h3>
                         </div>
                     )
