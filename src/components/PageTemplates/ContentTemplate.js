@@ -10,7 +10,7 @@ const ContentTemplate = (props) =>{
                 {props.children}
             </Col>
             <Col sm={3}>
-              <SideNav contents={props.contents} type={props.type}/>
+              <SideNav contents={"test"} type={props.type}/>
             </Col>
           </Row>
         )

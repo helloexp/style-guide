@@ -6,38 +6,32 @@ class SideNav extends Component {
   constructor(props){
     super(props);
     this.state = {
-      toggle: false
+      toggle: false,
+      active: ''
     }
-    this.toggle = this.toggle.bind(this);
   }
 
-  toggle(){
+  toggle(e, active){
     this.setState({
-      toggle: !this.state.toggle
+      toggle: !this.state.toggle,
+      active: e
     })
   }
 
   render() {
+    console.log(this.state)
     return (
       <div className="sidebar-nav">
         <Nav vertical>
           <NavItem>
-            <div  onClick={this.toggle} className="nav-link">Component</div>
-            <Collapse isOpen={this.state.toggle}>
-              <Link to="#" className="nav-link">Add</Link>
-              <Link to="#" className="nav-link">Edit</Link>
-            </Collapse>
+            <Link className="nav-link" to="/dashboard/component" >Component</Link>
+            
           </NavItem>
           <NavItem>
-            <div  onClick={this.toggle} className="nav-link">Style</div>
-            <Collapse isOpen={this.state.toggle}>
-              <Link to="#" className="nav-link">Add</Link>
-              <Link to="#" className="nav-link">Edit</Link>
-            </Collapse>
+            <Link className="nav-link" to="/dashboard/style" >Style</Link>
+      
           </NavItem>
-        
         </Nav>
-        
       </div>
     );
   }

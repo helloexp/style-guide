@@ -18,7 +18,7 @@ import { Link } from 'react-router-dom'
     return (
       <div className="sidebar-nav">
         <Nav vertical>
-          {links}
+          "test"
         </Nav>
       </div>
     );

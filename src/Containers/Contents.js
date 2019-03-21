@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getComponents } from '../store/actions/Content/contents';
+import { getContents } from '../store/actions/Content/contents';
 
 
 class Components extends Component {
 
 
   componentDidMount(){
-    this.fetchComponentData();
+    this.fetchContentData();
   }
 
-  fetchComponentData() {
-    const { getComponents } = this.props;
-    return getComponents()
+  fetchContentData() {
+    const { getContents } = this.props;
+    return getContents()
       .catch((err) => {
         console.log(`Error: ${err}`);
       });
@@ -22,15 +22,15 @@ class Components extends Component {
     const {
         Layout,
         history,
-        components,
+        contents,
         match
     } = this.props;
-
+    console.log(contents)
     
     return (
       <Layout
         history={history}
-        components={components}
+        contents={contents}
         match={match}
         
       />
@@ -39,11 +39,11 @@ class Components extends Component {
 }
 
 const mapStateToProps = state => ({
-  components: state.contents.components || {}
+  contents: state.contents || {}
 });
 
 const mapDispatchToProps = {
-  getComponents: getComponents
+  getContents: getContents
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Components);

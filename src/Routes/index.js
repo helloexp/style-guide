@@ -5,20 +5,23 @@ import { Switch, Route } from 'react-router-dom';
 import Error from '../components/PageTemplates/Error'
 import PageTemplate from '../components/PageTemplates/PageTemplate';
 import PageSideNavTemplate from '../components/PageTemplates/PageSideNavTemplate'
+import AdminContent from '../components/PageTemplates/AdminContentTemplate';
+
 
 //Pages
 import HomePage from '../components/PageTemplates/Pages/Home';
 import AdminPage from '../components/Admin/Admin'
-import ComponentsPage from '../components/PageTemplates/Pages/Components';
-import StyleRefPage from '../components/PageTemplates/Pages/StyleRef';
+import ContentsPage from '../components/PageTemplates/Pages/Contents';
 import ColorsPage from '../components/PageTemplates/Pages/Colors';
-import LoginPage from '../components/Auth/Login'
+import LoginPage from '../components/Auth/Login';
+import AddContentPage from '../components/Admin/Forms/AddItem';
+import EditContentPage from '../components/Admin/Forms/EditItem';
+
 
 // Containers
 import AuthContainer from '../Containers/Auth/Auth';
 import AdminContainer from '../Containers/Admin';
-import ComponentContainer from '../Containers/Components';
-import StyleContainer from '../Containers/Style'
+import ContentsContainer from '../Containers/Contents';
 
 const Routes = () => (
     <Switch>
@@ -33,41 +36,24 @@ const Routes = () => (
         />
         <Route
             exact
-            path="/components"
+            path="/:type"
             render={props => (
                 <PageTemplate>
-                    <ComponentContainer {...props} Layout={ComponentsPage}/> 
+                    <ContentsContainer {...props} Layout={ContentsPage}/> 
                 </PageTemplate>
             )}
         />
         <Route
             exact
-            path="/components/:slug"
+            path="/:type/:slug"
             render={props => (
                 <PageTemplate>
-                    <ComponentContainer {...props} Layout={ComponentsPage}/> 
+                    <ContentsContainer {...props} Layout={ContentsPage}/> 
                 </PageTemplate>
             )}
         />
 
-        <Route
-            exact
-            path="/style"
-            render={props => (
-                <PageTemplate>
-                    <StyleContainer {...props} Layout={StyleRefPage} />
-                </PageTemplate>
-            )}
-        />
-        <Route
-            exact
-            path="/style/:slug"
-            render={props => (
-                <PageTemplate>
-                    <StyleContainer {...props} Layout={StyleRefPage} />
-                </PageTemplate>
-            )}
-        />
+
         <Route
             exact
             path="/colors"
@@ -86,7 +72,17 @@ const Routes = () => (
                 </PageSideNavTemplate>
             )}
         />
-          <Route
+        <Route
+            exact
+            path="/dashboard/:type/"
+            render={props => (
+                <PageSideNavTemplate>
+                    <AdminContainer {...props} Layout={AdminContent}/>
+                </PageSideNavTemplate>
+            )}
+        />
+
+        <Route
             exact
             path="/login"
             render={props => (

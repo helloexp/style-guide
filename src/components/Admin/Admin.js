@@ -16,12 +16,7 @@ class Admin extends Component{
                 <Jumbotron>
                     <h1>Admin Dashboard</h1> 
                 </Jumbotron>
-                <div>
-                    <AddItemForm onSubmitAdd={this.props.onSubmitAdd} />
-                </div>
-                <div>
-                    <EditItemForm onSubmitEdit={this.props.onSubmitEdit} delete={this.props.delete}/>
-                </div>
+                
             </div>
         )
     }
