@@ -8,38 +8,20 @@ class Components extends Component {
     constructor(props){
         super(props);
         this.state={
-            slug: ''
+            
         }
     }
-    componentDidMount(){
-        const slug = this.props.match.params.slug;
-        console.log("did mount",slug)
-        this.setState({
-            slug
-        })
 
-    }
-    componentWillUnmount(){
-        this.state.slug = '';
-    }
     render(){
-        const { slug } = this.state;
+        const  slug  = this.props.match.params.slug;
         if(slug != null){
             if( !this.props.components[slug] ){
                 return (<ErrorPage />)
             }
         }
-        
-        // console.log(this.props.components[slug])
-        // let getData = Object.keys(this.props.components).filter( section => {
-        //     console.log(this.props.components[section])
-        //     return (slug == section) ? this.props.components[section] : null
-        // })
-        // console.log(getData)
-        // console.log(this.props.components[getData])
+
         let getData = this.props.components[slug]
-        console.log(getData)
-        console.log(slug)
+        console.log("render",slug)
 
         let content = '';
         if(getData != null){
@@ -48,21 +30,21 @@ class Components extends Component {
                 console.log(content)
                 console.log(contentData)
                 let contentSection = contentData.contents;
-                let getSectionData = Object.keys(contentSection).map(sectionData => {
+                let getSectionData = Object.keys(contentSection).map((sectionData, i) => {
                     let dataSet = contentSection[sectionData]
                     let sectionTitle = dataSet.section;
                     let sectionContent = Object.keys(dataSet.contents).map(contentData =>{
                         return dataSet.contents[contentData];
                     })
                     return(
-                        <div>
+                        <div key={i}>
                             <h3>{sectionTitle}</h3>
                             <p>{sectionContent}</p>
                         </div>
                     )
                 })
                 return(
-                    <div className="section-container">
+                    <div className="section-container" key={i}>
                         <h2>{contentData.title}</h2>
                         <h3>{getSectionData}</h3>
                     </div>

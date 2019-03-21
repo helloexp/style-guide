@@ -8,9 +8,9 @@ import { Link } from 'react-router-dom'
     const { contents, type } = this.props
     console.log(this.props)
     let sortKeys = Object.keys(contents).sort();
-    let links = sortKeys.map(slug => {
+    let links = sortKeys.map((slug, i) => {
       return (
-        <NavItem>
+        <NavItem key={i}>
             <Link className="text-cap nav-link" to={`/${type}/${slug}`}>{slug}</Link>
         </NavItem>
       )
