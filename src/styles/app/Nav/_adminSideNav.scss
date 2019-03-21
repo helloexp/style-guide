@@ -1,4 +1,6 @@
 .admin-sidebar-container{
     width: 200px;
+    height: calc(100% - 140px);
+    border-right: 2px solid gray;
     position: fixed;
 }

@@ -57,7 +57,7 @@ class Contents extends Component {
         return (
             <div>
                 <Jumbotron>
-                    <h1>{this.props.match.params.type}</h1>
+                    <h1 className="text-cap">{this.props.match.params.type}</h1>
                 </Jumbotron>
                 <ContentTemplate contents={getData}  type={type}>
                         { slug ?

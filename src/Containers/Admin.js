@@ -12,7 +12,8 @@ class Admin extends Component {
       addContent,
       editContent,
       deleteContent,
-      match
+      match,
+      contents
     } = this.props;
     
     return (
@@ -22,6 +23,7 @@ class Admin extends Component {
         onSubmitAdd={addContent}
         onSubmitEdit = {editContent}
         delete = {deleteContent}
+        contents={contents}
         match={match}
       />
     );
@@ -30,6 +32,7 @@ class Admin extends Component {
 
 const mapStateToProps = state => ({
   user: state.user || {},
+  contents: state.contents || {}
 });
 
 const mapDispatchToProps = {
