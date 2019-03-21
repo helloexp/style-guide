@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Form, FormGroup, Input, ButtonGroup, } from 'reactstrap';
+import {Form, FormGroup, Input, Label } from 'reactstrap';
 
 
 class contentForm extends Component{
@@ -9,7 +9,7 @@ class contentForm extends Component{
             type:"Style",
             category: 'typography',
             slug: 'text',
-            content: 'test'
+            content: []
 
         }
         this.onTypeClick = this.onTypeClick.bind(this);
@@ -27,6 +27,12 @@ class contentForm extends Component{
         this.setState({
           [event.target.name]: event.target.value
         });
+      }
+
+      addSection = (e) => {
+        this.setState((prevState) => ({
+          content: [...prevState.content, {}],
+        }));
       }
     
       handleSubmit = (event) => {
@@ -49,21 +55,26 @@ class contentForm extends Component{
             <div className="form-container">
                 <Form onSubmit={this.handleSubmit}>
                     <FormGroup>
-                        <ButtonGroup>
-                            <button  onClick={() => this.onTypeClick(0)} className={this.state.type === 0 ? "active": ""}>Component</button>
-                            <button  onClick={() => this.onTypeClick(1)} className={this.state.type === 1 ? "active": ""}>Style</button>
-                        </ButtonGroup>
-
+                        <Label>Title</Label>
+                        <Input placeholder="Enter title"/>
                     </FormGroup>
-                    <FormGroup>
-                        <Input placeholder="Enter Content"/>
-                    </FormGroup>
-                        <button
+                    <button>Add Section</button>
+                    <div>
+                        <FormGroup>
+                            <Label>Section Title</Label>
+                            <Input placeholder="Enter section title"/>
+                        </FormGroup>
+                        <FormGroup>
+                            <Label>Content</Label>
+                            <Input placeholder="Enter content"/>
+                        </FormGroup>
+                    </div>
+                    <button
                         disabled={!this.validateForm()}
                         className={!this.validateForm()? "disable-btn": ""}
                         type="submit">
                             Save
-                        </button>
+                    </button>
                 </Form>
             </div>
            

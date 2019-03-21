@@ -3,8 +3,6 @@ import ContentForm from '../Forms/contentForm';
 
 
 const AddItem = (props) =>{
-    console.log(props)
-    
    return(
         <div>
             <h3>Add new item</h3>
@@ -12,5 +10,4 @@ const AddItem = (props) =>{
         </div> 
    )
 }
-
 export default AddItem;

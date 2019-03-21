@@ -9,9 +9,9 @@ const AdminContent = (props) =>{
         const type = props.match.params.type;
         const slug = props.match.params.slug;
         const sections = props.contents.contents[type]
-        const sectionsCard = Object.keys(sections).map( data => {
+        const sectionsCard = Object.keys(sections).map( (data,i) => {
             return(
-                <Link className="content-card" to={`/dashboard/${type}/${data}/edit`}>
+                <Link key={i} className="content-card" to={`/dashboard/${type}/${data}/edit`}>
                     <Card className="flex flex-center">
                         <h5 className="text-center text-cap">{data}</h5>
                     </Card>
