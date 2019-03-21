@@ -58,7 +58,7 @@ class contentForm extends Component{
                         <Label>Title</Label>
                         <Input placeholder="Enter title"/>
                     </FormGroup>
-                    <button>Add Section</button>
+                    
                     <div>
                         <FormGroup>
                             <Label>Section Title</Label>
@@ -69,6 +69,10 @@ class contentForm extends Component{
                             <Input placeholder="Enter content"/>
                         </FormGroup>
                     </div>
+                    <FormGroup>
+                        <button>Add Section</button>
+
+                    </FormGroup>
                     <button
                         disabled={!this.validateForm()}
                         className={!this.validateForm()? "disable-btn": ""}
