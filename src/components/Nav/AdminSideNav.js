@@ -24,7 +24,7 @@ class SideNav extends Component {
       <div className="sidebar-nav">
         <Nav vertical>
           <NavItem>
-            <Link className="nav-link" to="/dashboard/component" >Component</Link>
+            <Link className="nav-link" to="/dashboard/components" >Components</Link>
             
           </NavItem>
           <NavItem>
