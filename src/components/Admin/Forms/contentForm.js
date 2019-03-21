@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Form, FormGroup, Input, ButtonGroup, } from 'reactstrap';
 
 
-class EditItem extends Component{
+class contentForm extends Component{
     constructor(props){
         super(props);
         this.state = {
@@ -31,9 +31,9 @@ class EditItem extends Component{
     
       handleSubmit = (event) => {
         event.preventDefault();
-        const { onSubmitEdit, history } = this.props;
+        const { onSubmit, history } = this.props;
         console.log("component", this.props)
-        onSubmitEdit(this.state)
+        onSubmit(this.state)
           .then((res) => {
               console.log("success",res)
               history.push('/dashboard');
@@ -47,7 +47,6 @@ class EditItem extends Component{
     render(){
         return(
             <div className="form-container">
-                <h3>Edit item</h3>
                 <Form onSubmit={this.handleSubmit}>
                     <FormGroup>
                         <ButtonGroup>
@@ -72,4 +71,4 @@ class EditItem extends Component{
     }
 }
 
-export default EditItem;
+export default contentForm;

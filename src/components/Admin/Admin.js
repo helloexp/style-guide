@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {Jumbotron} from 'reactstrap';
-import AddItemForm from './Forms/AddItem';
-import EditItemForm from './Forms/EditItem';
+
 import ErrorPage from '../PageTemplates/Error'
 
 

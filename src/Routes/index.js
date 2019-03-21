@@ -14,8 +14,8 @@ import AdminPage from '../components/Admin/Admin'
 import ContentsPage from '../components/PageTemplates/Pages/Contents';
 import ColorsPage from '../components/PageTemplates/Pages/Colors';
 import LoginPage from '../components/Auth/Login';
-import AddContentPage from '../components/Admin/Forms/AddItem';
-import EditContentPage from '../components/Admin/Forms/EditItem';
+import AddContentPage from '../components/Admin/Contents/AddItem';
+import EditContentPage from '../components/Admin/Contents/EditItem';
 
 
 // Containers

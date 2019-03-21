@@ -1,0 +1,15 @@
+
+.admin-content-container{
+    width: 100%;
+    .content-card-container{
+    margin-top: 50px;
+
+        .content-card{
+            
+            @include bp(sm){
+                width: 25%;
+                margin: 15px;
+            }
+        }
+    }
+}
